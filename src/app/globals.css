@@ -1,0 +1,92 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+:root {
+  --background: #eef4fc;
+  --background-deep: #dbe8fa;
+  --foreground: #142442;
+  --foreground-muted: #4b6183;
+
+  --color-mist: #ffffff;
+  --color-glass: rgba(255, 255, 255, 0.55);
+  --color-glass-strong: rgba(255, 255, 255, 0.78);
+  --color-glass-border: rgba(255, 255, 255, 0.6);
+
+  --color-primary: #2f6fed;
+  --color-primary-deep: #1d4fc4;
+  --color-secondary: #7fb2f0;
+  --color-accent: #a9c9f5;
+
+  --font-display: var(--font-playfair);
+  --font-body: var(--font-inter);
+  --font-mono: var(--font-jetbrains);
+
+  --shadow-soft: 0 20px 60px -20px rgba(47, 111, 237, 0.25);
+  --shadow-lift: 0 30px 80px -24px rgba(20, 36, 66, 0.35);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-foreground-muted: var(--foreground-muted);
+  --color-mist: var(--color-mist);
+  --color-glass: var(--color-glass);
+  --color-glass-strong: var(--color-glass-strong);
+  --color-glass-border: var(--color-glass-border);
+  --color-primary: var(--color-primary);
+  --color-primary-deep: var(--color-primary-deep);
+  --color-secondary: var(--color-secondary);
+  --color-accent: var(--color-accent);
+  --font-display: var(--font-display);
+  --font-sans: var(--font-body);
+  --font-mono: var(--font-mono);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: linear-gradient(180deg, var(--background) 0%, var(--background-deep) 100%);
+  color: var(--foreground);
+  font-family: var(--font-body);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.glass-card {
+  background: var(--color-glass);
+  backdrop-filter: blur(20px) saturate(140%);
+  border: 1px solid var(--color-glass-border);
+  box-shadow: var(--shadow-soft);
+}
+
+.glass-card-strong {
+  background: var(--color-glass-strong);
+  backdrop-filter: blur(24px) saturate(150%);
+  border: 1px solid var(--color-glass-border);
+  box-shadow: var(--shadow-lift);
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+::selection {
+  background: var(--color-primary);
+  color: #ffffff;
+}
