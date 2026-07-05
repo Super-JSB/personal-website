@@ -4,10 +4,13 @@ import { motion } from "framer-motion";
 import { Bot, Terminal } from "lucide-react";
 import { buildStack } from "@/content/site";
 import { Reveal } from "@/components/Reveal";
+import SectionBackground from "@/components/SectionBackground";
 
 export default function BuildStack() {
   return (
-    <section id="stack" className="py-24 px-6">
+    <section id="stack" className="relative py-24 px-6">
+      <SectionBackground src="/images/background-2.jpg" />
+
       <div className="max-w-6xl mx-auto">
         <Reveal>
           <p className="font-mono text-xs tracking-[0.3em] uppercase text-[var(--color-primary)] mb-2">
@@ -20,7 +23,7 @@ export default function BuildStack() {
 
         <div className="grid md:grid-cols-2 gap-6 mb-6">
           <Reveal>
-            <div className="glass-card-strong rounded-2xl p-7 h-full flex gap-4">
+            <div className="glass-card rounded-2xl p-7 h-full flex gap-4">
               <div className="w-11 h-11 rounded-xl bg-[var(--color-primary)] text-white flex items-center justify-center shrink-0">
                 <Bot size={22} />
               </div>
@@ -39,7 +42,7 @@ export default function BuildStack() {
           </Reveal>
 
           <Reveal delay={0.08}>
-            <div className="glass-card-strong rounded-2xl p-7 h-full flex gap-4">
+            <div className="glass-card rounded-2xl p-7 h-full flex gap-4">
               <div className="w-11 h-11 rounded-xl bg-[var(--color-primary)] text-white flex items-center justify-center shrink-0">
                 <Terminal size={22} />
               </div>

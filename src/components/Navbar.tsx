@@ -21,7 +21,7 @@ export default function Navbar() {
   return (
     <header
       className={`sticky top-0 z-50 transition-all duration-300 ${
-        scrolled ? "glass-card-strong shadow-md" : "bg-transparent"
+        scrolled ? "glass-nav shadow-md" : "bg-transparent"
       }`}
     >
       <nav className="max-w-6xl mx-auto flex items-center justify-between px-6 py-4">
@@ -62,7 +62,7 @@ export default function Navbar() {
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.25, ease: "easeInOut" }}
-            className="md:hidden overflow-hidden glass-card-strong px-6 flex flex-col gap-1 pb-4"
+            className="md:hidden overflow-hidden glass-nav px-6 flex flex-col gap-1 pb-4"
           >
             {nav.map((item) => (
               <li key={item.label}>

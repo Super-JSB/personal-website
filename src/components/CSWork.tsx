@@ -4,10 +4,13 @@ import { motion } from "framer-motion";
 import { ArrowUpRight, Code2 } from "lucide-react";
 import { csWork } from "@/content/site";
 import { Reveal } from "@/components/Reveal";
+import SectionBackground from "@/components/SectionBackground";
 
 export default function CSWork() {
   return (
-    <section id="cs-work" className="py-24 px-6">
+    <section id="cs-work" className="relative py-24 px-6">
+      <SectionBackground src="/images/background-1.jpg" />
+
       <div className="max-w-6xl mx-auto">
         <Reveal>
           <p className="font-mono text-xs tracking-[0.3em] uppercase text-[var(--color-primary)] mb-2">

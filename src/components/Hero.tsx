@@ -6,27 +6,19 @@ import { MapPin } from "lucide-react";
 import { site } from "@/content/site";
 import MusicPlayer from "@/components/MusicPlayer";
 import SocialLinks from "@/components/SocialLinks";
+import SectionBackground from "@/components/SectionBackground";
 
 export default function Hero() {
   return (
     <section id="home" className="relative pt-16 pb-24 px-6">
-      <div className="absolute inset-0 -z-10 overflow-hidden">
-        <Image
-          src="/images/background-2.jpg"
-          alt=""
-          fill
-          priority
-          className="object-cover opacity-40"
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-[var(--background)]/40 via-[var(--background)]/70 to-[var(--background)]" />
-      </div>
+      <SectionBackground src="/images/background-2.jpg" priority />
 
       <div className="max-w-6xl mx-auto grid md:grid-cols-[1.4fr_1fr] gap-6">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-          className="glass-card-strong rounded-3xl p-8 md:p-10 flex flex-col sm:flex-row gap-8 items-start"
+          className="glass-card rounded-3xl p-8 md:p-10 flex flex-col sm:flex-row gap-8 items-start"
         >
           <motion.div
             whileHover={{ scale: 1.05, rotate: -2 }}

@@ -1,23 +1,15 @@
 "use client";
 
-import Image from "next/image";
 import { motion } from "framer-motion";
 import { Sparkles } from "lucide-react";
 import { interests } from "@/content/site";
 import { Reveal } from "@/components/Reveal";
+import SectionBackground from "@/components/SectionBackground";
 
 export default function Interests() {
   return (
     <section id="interests" className="relative py-24 px-6">
-      <div className="absolute inset-0 -z-10 overflow-hidden">
-        <Image
-          src="/images/interests-background.jpg"
-          alt=""
-          fill
-          className="object-cover opacity-25"
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-[var(--background)] via-[var(--background)]/80 to-[var(--background)]" />
-      </div>
+      <SectionBackground src="/images/interests-background.jpg" />
 
       <div className="max-w-6xl mx-auto">
         <Reveal>

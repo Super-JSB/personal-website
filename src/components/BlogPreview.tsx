@@ -2,6 +2,7 @@ import Link from "next/link";
 import { ArrowUpRight, Calendar } from "lucide-react";
 import { getAllPosts } from "@/lib/posts";
 import { Reveal } from "@/components/Reveal";
+import SectionBackground from "@/components/SectionBackground";
 
 export default function BlogPreview() {
   const posts = getAllPosts().slice(0, 3);
@@ -9,7 +10,9 @@ export default function BlogPreview() {
   if (posts.length === 0) return null;
 
   return (
-    <section id="blog" className="py-24 px-6">
+    <section id="blog" className="relative py-24 px-6">
+      <SectionBackground src="/images/background-3.jpg" />
+
       <div className="max-w-6xl mx-auto">
         <Reveal>
           <div className="flex items-end justify-between mb-10 flex-wrap gap-4">

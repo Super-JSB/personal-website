@@ -26,7 +26,7 @@ export default function FloatingDock() {
             whileTap={{ scale: 0.85 }}
             whileHover={{ scale: 1.08 }}
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-            className="w-12 h-12 rounded-full glass-card-strong flex items-center justify-center text-[var(--color-primary)] cursor-pointer"
+            className="w-12 h-12 rounded-full glass-card flex items-center justify-center text-[var(--color-primary)] cursor-pointer"
             aria-label="Back to top"
           >
             <ArrowUp size={20} />

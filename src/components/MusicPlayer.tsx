@@ -62,7 +62,7 @@ export default function MusicPlayer() {
   }
 
   return (
-    <div className="glass-card-strong rounded-3xl p-6 flex flex-col gap-5 h-full">
+    <div className="glass-card rounded-3xl p-6 flex flex-col gap-5 h-full">
       <audio ref={audioRef} src={track.src} preload="metadata" />
 
       <div className="flex items-center gap-4">
