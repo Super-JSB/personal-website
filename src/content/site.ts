@@ -60,7 +60,7 @@ export const csWork = [
     tags: ["Next.js", "TypeScript", "Tailwind"],
     description:
       "This site. Built with Claude Code from a blank folder — design, content, and animation all part of the same build.",
-    href: "/#stack",
+    href: "https://github.com/Super-JSB/personal-website",
   },
   {
     title: "Codepet Labs",

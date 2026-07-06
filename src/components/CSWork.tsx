@@ -22,10 +22,14 @@ export default function CSWork() {
         </Reveal>
 
         <div className="grid md:grid-cols-2 gap-5">
-          {csWork.map((item, i) => (
+          {csWork.map((item, i) => {
+            const isExternal = item.href.startsWith("http");
+            return (
             <Reveal key={item.title} delay={i * 0.1}>
               <motion.a
                 href={item.href}
+                target={isExternal ? "_blank" : undefined}
+                rel={isExternal ? "noopener noreferrer" : undefined}
                 whileHover={{ y: -4 }}
                 whileTap={{ scale: 0.98 }}
                 className="glass-card rounded-2xl p-7 h-full flex flex-col cursor-pointer group"
@@ -55,7 +59,8 @@ export default function CSWork() {
                 </div>
               </motion.a>
             </Reveal>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>
