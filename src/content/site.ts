@@ -85,6 +85,7 @@ export const buildStack = {
     { name: "TypeScript", role: "Type-safe application code" },
     { name: "Tailwind CSS", role: "Utility-first styling" },
     { name: "Framer Motion", role: "Animation & interaction" },
+    { name: "Supabase", role: "Postgres database for blog posts" },
     { name: "Vercel", role: "Hosting & deployment" },
     { name: "GitHub", role: "Version control & CI" },
   ],

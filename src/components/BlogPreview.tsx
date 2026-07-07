@@ -4,8 +4,8 @@ import { getAllPosts } from "@/lib/posts";
 import { Reveal } from "@/components/Reveal";
 import SectionBackground from "@/components/SectionBackground";
 
-export default function BlogPreview() {
-  const posts = getAllPosts().slice(0, 3);
+export default async function BlogPreview() {
+  const posts = (await getAllPosts()).slice(0, 3);
 
   if (posts.length === 0) return null;
 

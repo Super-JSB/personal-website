@@ -1,15 +1,13 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { MDXRemote } from "next-mdx-remote/rsc";
+import ReactMarkdown from "react-markdown";
 import { Calendar, ArrowLeft } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Reveal } from "@/components/Reveal";
-import { getAllPosts, getPostBySlug } from "@/lib/posts";
+import { getPostBySlug } from "@/lib/posts";
 
-export function generateStaticParams() {
-  return getAllPosts().map((post) => ({ slug: post.slug }));
-}
+export const dynamic = "force-dynamic";
 
 export async function generateMetadata({
   params,
@@ -17,7 +15,7 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const post = getPostBySlug(slug);
+  const post = await getPostBySlug(slug);
   return { title: post?.title ?? "Post not found" };
 }
 
@@ -27,7 +25,7 @@ export default async function BlogPostPage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const post = getPostBySlug(slug);
+  const post = await getPostBySlug(slug);
   if (!post) notFound();
 
   return (
@@ -63,7 +61,7 @@ export default async function BlogPostPage({
 
         <Reveal delay={0.1}>
           <article className="glass-card rounded-2xl p-8 prose prose-slate max-w-none prose-headings:font-display prose-a:text-[var(--color-primary)]">
-            <MDXRemote source={post.content} />
+            <ReactMarkdown>{post.content}</ReactMarkdown>
           </article>
         </Reveal>
       </main>

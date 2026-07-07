@@ -7,6 +7,8 @@ import BuildStack from "@/components/BuildStack";
 import BlogPreview from "@/components/BlogPreview";
 import Footer from "@/components/Footer";
 
+export const dynamic = "force-dynamic";
+
 export default function Home() {
   return (
     <div className="flex flex-col flex-1">

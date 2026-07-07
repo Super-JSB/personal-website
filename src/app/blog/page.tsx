@@ -6,9 +6,10 @@ import { Reveal } from "@/components/Reveal";
 import { getAllPosts } from "@/lib/posts";
 
 export const metadata = { title: "Blog" };
+export const dynamic = "force-dynamic";
 
-export default function BlogIndexPage() {
-  const posts = getAllPosts();
+export default async function BlogIndexPage() {
+  const posts = await getAllPosts();
 
   return (
     <div className="flex flex-col flex-1">
